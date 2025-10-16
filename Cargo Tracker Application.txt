@@ -1,0 +1,55 @@
+Cargo Tracker Application
+This application consists of two main parts: a Client for managing containers and pallets, and a Server for receiving and displaying the serialized container data.
+
+How to Use the Application
+Running the Server
+Start the Server: Locate and run the Server executable.
+
+Monitor Connections: The server window will display a table. This table will be populated with container data once the client sends it.
+
+Keep it Running: Ensure the server is running before attempting to send data from the client.
+
+Running the Client
+Start the Client: Locate and run the CargoTrackerApp executable.
+
+Containers Tab:
+
+Create Containers: Use the "Box" and "Cylinder" sections to input dimensions, weight, and add new containers. These will appear in the "List of unallocated containers".
+
+Move to Pallet: Select an unallocated container from the list, choose a pallet number using the spin box, and click "Move to pallet". This assigns the container to the specified pallet.
+
+Backup/Restore:
+
+"Backup": Saves the current state of unallocated containers in memory.
+
+"Restore": Restores the unallocated containers from the last backup.
+
+Post XML Tab:
+
+This tab displays the XML generated from your pallets and shows status messages.
+
+Sending Data: To send the pallet data to the server, use the "Post XML" action available in the toolbar or the "Post XML" menu. You'll receive status updates in the status bar and the generated XML will appear in the text area.
+
+Menus and Toolbar:
+
+The File menu allows you to exit the application.
+
+The Backup menu contains "Backup" and "Restore" actions.
+
+The Post XML menu (and its toolbar button) is used to send your pallet data.
+
+The Help menu provides "About" and "Help" information.
+
+Important Prerequisites
+For the application to function correctly and display all its graphical elements, you must ensure the following files and folders are present in the same directory as your executables:
+
+images/ folder: This directory contains all the icons and other image assets used by the application's user interface (e.g., for actions, tabs, etc.). Without this folder and its contents, the application's UI might appear broken or incomplete.
+
+.qrc file: This is a Qt Resource Collection file. It defines where the application can find its internal resources, including images. While the .qrc file itself is compiled into the executable, its presence during development and compilation is crucial for linking the image paths correctly. Ensure it's part of your Qt project setup.
+
+If these resources are missing, you may experience missing icons or other visual glitches.
+
+Troubleshooting
+Server Connection Issues: If the client reports it cannot connect to the server, ensure the Server application is running first.
+
+Missing Icons/Images: Double-check that the images/ folder is correctly placed alongside your client and server executables, and that the .qrc file is properly configured in your project.
